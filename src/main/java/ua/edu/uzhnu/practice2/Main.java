@@ -10,5 +10,6 @@ public class Main {
         SampleFamilyProvider n1 = new SampleFamilyProvider();
         System.out.println( n1.makeFamilyTree().getMother().getMother().getFather().getName());
 
+
     }
 }

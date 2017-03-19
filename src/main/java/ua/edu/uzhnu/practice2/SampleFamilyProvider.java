@@ -1,5 +1,6 @@
 package ua.edu.uzhnu.practice2;
 
+
 /**
  * Created by Таня on 19.03.2017.
  */
@@ -7,6 +8,7 @@ public class SampleFamilyProvider {
 
     Male ivan = new Male ("Іван");
     Female marina = new Female("Марина") ;
+    //ivan.children.add(katia);
     Female katia = new Female("Катя", ivan, marina);
     Female ira = new Female("Іра", ivan, marina);
     Male ostap = new Male("Остап");
