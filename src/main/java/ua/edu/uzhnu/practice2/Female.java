@@ -30,7 +30,7 @@ public class Female extends Person {
         this.mother = Female.DEFAULT;
     }
 
-    public Female(){
+    private Female(){
         super("Невідома");
     }
 }

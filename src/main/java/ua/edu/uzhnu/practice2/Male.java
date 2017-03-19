@@ -34,7 +34,7 @@ public class Male extends Person {
     }
 
 
-    public Male(){
+    private Male(){
         super("Невідомий");
     }
 }
