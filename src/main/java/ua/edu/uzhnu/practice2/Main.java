@@ -7,5 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        SampleFamilyProvider n1 = new SampleFamilyProvider();
+        System.out.println( n1.makeFamilyTree().getMother().getMother().getFather().getName());
+
     }
 }

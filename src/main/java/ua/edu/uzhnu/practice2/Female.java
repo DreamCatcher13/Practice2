@@ -24,7 +24,13 @@ public class Female extends Person {
         super(name, father, mother);
     }
 
+    public Female(String name) {
+        this.name = name;
+        this.father = Male.DEFAULT;
+        this.mother = Female.DEFAULT;
+    }
+
     public Female(){
-        super("Невідомий");
+        super("Невідома");
     }
 }

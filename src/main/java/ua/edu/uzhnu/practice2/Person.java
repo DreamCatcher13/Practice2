@@ -7,7 +7,7 @@ import com.sun.istack.internal.NotNull;
  */
 public  abstract  class Person {
 
-    private String name;
+    String name;
     Male father;
     Female mother;
 
@@ -18,6 +18,12 @@ public  abstract  class Person {
         this.name=name;
         this.father=father;
         this.mother=mother;
+    }
+
+    public Person (String name){
+        this.name = name;
+        this.father = Male.DEFAULT;
+        this.mother = Female.DEFAULT;
     }
 
     public static final Person DEFAULT = new Person() {
@@ -33,9 +39,6 @@ public  abstract  class Person {
 
     };
 
-    protected Person(String name) {
-        this.name = name;
-    }
 
     public Person() {
         this.name="Невідомий";
@@ -49,5 +52,9 @@ public  abstract  class Person {
 
     public Female getMother() {
         return mother;
+    }
+
+    public String getName() {
+        return name;
     }
 }

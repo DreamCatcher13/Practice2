@@ -27,6 +27,13 @@ public class Male extends Person {
         super(name, father, mother);
     }
 
+    public Male(String name) {
+        this.name = name;
+        this.father = Male.DEFAULT;
+        this.mother = Female.DEFAULT;
+    }
+
+
     public Male(){
         super("Невідомий");
     }
