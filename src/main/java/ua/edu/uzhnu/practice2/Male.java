@@ -27,7 +27,7 @@ public class Male extends Person {
         super(name, father, mother);
     }
 
-    private Male(){
+    public Male(){
         super("Невідомий");
     }
 }
