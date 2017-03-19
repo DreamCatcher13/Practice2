@@ -1,11 +1,24 @@
 package ua.edu.uzhnu.practice2;
 
+import com.sun.istack.internal.NotNull;
+
 /**
  * Created by Таня on 16.03.2017.
  */
 public class Female extends Person {
 
-    public static final Female DEFAULT = new Female();
+    public static final Female DEFAULT = new Female() {
+        @Override
+        public Male getFather() {
+            return Male.DEFAULT;
+        }
+
+        @Override
+        public Female getMother() {
+            return Female.DEFAULT;
+        }
+
+    };
 
     public Female(String name, @NotNull Male father, @NotNull Female mother) {
         super(name, father, mother);
@@ -13,7 +26,5 @@ public class Female extends Person {
 
     private Female(){
         super("Невідомий");
-        this.mother=Female.DEFAULT;
-        this.father=Male.DEFAULT
     }
 }

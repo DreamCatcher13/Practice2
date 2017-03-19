@@ -11,14 +11,16 @@ public class Male extends Person {
 
     public static final Male DEFAULT = new Male() {
         @Override
-        public Male getFather(){
+        public Male getFather() {
             return Male.DEFAULT;
         }
+
         @Override
-        public Female getMother (){
+        public Female getMother() {
             return Female.DEFAULT;
         }
-    }
+
+    };
 
 
     public Male(String name, @NotNull Male father, @NotNull Female mother) {
