@@ -24,14 +24,14 @@ public class Female extends Person {
 
     public Female(String name, @NotNull Male father, @NotNull Female mother) {
         super(name, father, mother);
-        children = new TreeSet<Person>();
     }
 
     public Female(String name) {
         this.name = name;
         this.father = Male.DEFAULT;
         this.mother = Female.DEFAULT;
-        this.children = new TreeSet<Person>();
+        father.children.add(this);
+        mother.children.add(this);
     }
 
     private Female(){

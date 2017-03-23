@@ -2,6 +2,7 @@ package ua.edu.uzhnu.practice2;
 
 import com.sun.istack.internal.NotNull;
 
+import java.util.List;
 import java.util.TreeSet;
 
 /**
@@ -12,7 +13,7 @@ public  abstract  class Person {
     String name;
     Male father;
     Female mother;
-    TreeSet <Person> children;
+    List <Person> children;
 
     public Person(String name, @NotNull Male father, @NotNull Female mother){
         if ( father == null || mother == null){
@@ -21,14 +22,14 @@ public  abstract  class Person {
         this.name=name;
         this.father=father;
         this.mother=mother;
-        this.children=new TreeSet<Person>();
+        father.children.add(this);
+        mother.children.add(this);
     }
 
     public Person (String name){
         this.name = name;
         this.father = Male.DEFAULT;
         this.mother = Female.DEFAULT;
-        this.children=new TreeSet<Person>();
     }
 
     public static final Person DEFAULT = new Person() {
@@ -49,7 +50,6 @@ public  abstract  class Person {
         this.name="Невідомий";
         this.mother=Female.DEFAULT;
         this.father=Male.DEFAULT;
-        this.children=new TreeSet<Person>();
     }
 
     public Male getFather() {
@@ -64,7 +64,7 @@ public  abstract  class Person {
         return name;
     }
 
-    public int getChildren(Person person){
-        return 0;
+    public int getChildren( Person child){
+        return children.indexOf(child);
     }
 }
