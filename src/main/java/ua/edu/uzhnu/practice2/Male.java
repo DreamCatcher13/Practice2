@@ -3,6 +3,7 @@ package ua.edu.uzhnu.practice2;
 import com.sun.istack.internal.NotNull;
 
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.ArrayList;
 import java.util.TreeSet;
 
 /**
@@ -26,6 +27,7 @@ public class Male extends Person {
 
     public Male(String name, @NotNull Male father, @NotNull Female mother) {
         super(name, father, mother);
+        this.children = new ArrayList<Person>();
         father.children.add(this);
         mother.children.add(this);
 
@@ -33,6 +35,7 @@ public class Male extends Person {
 
     public Male(String name) {
         this.name = name;
+        this.children = new ArrayList<Person>();
         this.father = Male.DEFAULT;
         this.mother = Female.DEFAULT;
     }

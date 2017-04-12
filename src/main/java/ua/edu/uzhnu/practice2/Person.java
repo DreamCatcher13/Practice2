@@ -2,6 +2,7 @@ package ua.edu.uzhnu.practice2;
 
 import com.sun.istack.internal.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -22,8 +23,10 @@ public  abstract  class Person {
         this.name=name;
         this.father=father;
         this.mother=mother;
+        this.children = new ArrayList<Person>();
         father.children.add(this);
         mother.children.add(this);
+
     }
 
     public Person (String name){
